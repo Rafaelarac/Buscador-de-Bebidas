@@ -1,6 +1,10 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink,useLocation } from "react-router-dom"
 
 export default function Header() {
+
+    const {pathname} = useLocation()
+    console.log(pathname);
+
     return (
         <header className="bg-slate-800">
             <div className="mx-auto container px-5 py-16">
@@ -10,14 +14,16 @@ export default function Header() {
                     </div>
 
                     <nav className="flex gap-4">
-                        <Link 
+                        <NavLink 
                             to="/"
-                            className="text-white font-bold uppercase"
-                        >Inicio</Link>
-                        <Link 
+                            className={({isActive}) => 
+                                isActive ? "text-orange-600 font-bold uppercase" : "text-white font-bold uppercase"
+                            }
+                        >Inicio</NavLink>
+                        <NavLink 
                             to="/favoritos"
                             className="text-white font-bold uppercase"
-                        >Favoritos</Link> 
+                        >Favoritos</NavLink> 
                     </nav>
                 </div>
             </div>
