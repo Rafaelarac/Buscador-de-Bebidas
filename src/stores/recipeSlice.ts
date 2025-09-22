@@ -1,4 +1,12 @@
+import type { StateCreator } from "zustand"
 
-export const createRecipesSlice = ( ) => ({
+type Category = {}
+
+export type RecipisSliceType = {
+    categories: Category[]
+} 
+
+export const createRecipesSlice : StateCreator<RecipisSliceType> = ( ) => ({
     categories: [],
 })
+
