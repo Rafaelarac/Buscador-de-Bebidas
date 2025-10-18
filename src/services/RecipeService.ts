@@ -1,6 +1,6 @@
 import axios from "axios";
 import { CategoriesAPIResponseSchema, DrinksAPIResponse } from "../utils/recipes-schema";
-import type { SearchFilter } from "../types";
+import type { Drink, SearchFilter } from "../types";
 
 
 
@@ -29,4 +29,8 @@ export async function getRecipes(filters: SearchFilter) {
         return result.data
     }
     
+}
+
+export async function getRecipeById(id: Drink) {
+    console.log(id);
 }
