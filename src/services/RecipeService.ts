@@ -31,7 +31,7 @@ export async function getRecipes(filters: SearchFilter) {
     
 }
 
-export async function getRecipeById(id: Drink) {
+export async function getRecipeById(id: Drink['idDrink']) {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
     const {data} = await axios(url)
     const result = RecipeAPIResponseSchema.safeParse(data.drinks[0])
@@ -40,3 +40,4 @@ export async function getRecipeById(id: Drink) {
         return result.data
     }
 }
+
