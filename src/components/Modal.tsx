@@ -20,7 +20,7 @@ export default function Modal() {
                 ingredients.push(
                     <li 
                         key={i}
-                        className='text-lg font-normal'
+                        className='text-lg font-normal mx-4'
                     >
                         {ingredient} - {measure}
                     </li>
@@ -75,6 +75,23 @@ export default function Modal() {
                                         Instrucciones
                                     </DialogTitle>
                                     <p className='text-lg'>{selectedRecipe.strInstructions}</p>
+
+                                    <div className='mt-5 flex justify-between gap-4'>
+                                        <button
+                                            type='button'
+                                            className='w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500'
+                                            onClick={closeModal}
+                                        >
+                                            Cerrar
+                                        </button>
+
+                                        <button
+                                            type='button'
+                                            className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'
+                                        >
+                                            Añadir a Favoritos
+                                        </button>
+                                    </div>
                                 </DialogPanel>
                             </Transition.Child>
                         </div>
