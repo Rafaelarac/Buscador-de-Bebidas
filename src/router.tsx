@@ -1,10 +1,12 @@
 import { lazy, Suspense } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-
 import Layout from "./layout/Layout"
+
+
 
 const IndexPage = lazy(() => import('./views/IndexPage'))
 const FavoritesPage = lazy(() => import('./views/FavoritesPage'))
+const GenerateAI = lazy(() => import('./views/GenerativeAI'))
 
 export default function AppRouter() {
     return (
@@ -22,6 +24,12 @@ export default function AppRouter() {
                             <FavoritesPage />
                         </Suspense>
                     } />
+                    <Route path="/generate" element={
+                        <Suspense fallback="Cargando...">
+                            <GenerateAI/>
+                        </Suspense>
+                    }>
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
