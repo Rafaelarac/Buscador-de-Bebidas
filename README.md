@@ -30,10 +30,10 @@ El proyecto no requiere instalación especial, pero para ejecutarlo en entorno l
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/usuario/tu-repo.git
+git clone https://github.com/Rafaelarac/Buscador-de-Bebidas.git
 
 # Entrar al directorio del proyecto
-cd https://github.com/Rafaelarac/Buscador-de-Bebidas.git
+cd .../Buscador-de-Bebidas
 
 # Instalar dependencias
 npm install
