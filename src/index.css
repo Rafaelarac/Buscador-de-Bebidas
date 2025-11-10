@@ -1,3 +1,19 @@
 @import "tailwindcss";
 
+/* Define la animación blink con keyframes */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.5;
+    }
+}
+
+/* En Tailwind v4, define las animaciones usando custom properties */
+@layer utilities {
+    .animate-blink {
+    animation: 1s ease-in-out infinite blink;
+    }
+}
 
